@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+const { name, position, desc, email, avatarSrc } = Astro.props;
+---
+
+<div class="card">
+  <div class="card__avatar-container">
+    <Image
+      src={avatarSrc}
+      class="card__avatar"
+      alt={`${name} Avatar`}
+      width={96}
+      height={96}
+    />
+  </div>
+  <h1 class="card__name">{name}</h1>
+  <p class="card__position">{position}</p>
+  <p class="card__description">{desc}</p>
+  <a href={`mailto:${email}`} class="card__email">{email}</a>
+</div>
+
+<style lang="scss">
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--gray-surface);
+    border: 1px solid var(--gray-6);
+    border-radius: 16px;
+    box-shadow:
+      0 2px 4px var(--gray-a2),
+      0 4px 8px var(--gray-a1),
+      0 8px 16px var(--pink-a1);
+    max-width: 375px;
+    margin: 0 auto;
+    text-align: center;
+
+    &__avatar-container {
+      border-radius: 50%;
+      width: 96px;
+      height: 96px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    &__avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__name {
+      color: var(--gray-12);
+      font-size: 1.5rem;
+      font-weight: var(--weight-medium);
+    }
+
+    &__position {
+      font-size: 1.125rem;
+      color: var(--gray-11);
+      margin-block-end: 1rem;
+    }
+
+    &__description,
+    &__email {
+      font-size: 0.875rem;
+    }
+
+    &__description {
+      color: var(--gray-10);
+      font-size: 0.9rem;
+      margin-block-end: 1rem;
+    }
+
+    &__email {
+      color: var(--pink-9);
+      text-decoration: none;
+      transition: color 300ms ease-in-out;
+
+      &:hover {
+        color: var(--pink-10);
+      }
+    }
+  }
+</style>
