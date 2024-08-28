@@ -27,11 +27,11 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     initial-value: 0deg;
   }
   .card {
-  --rotate: 45deg;
+    --rotate: 45deg;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--gray-surface);
     border: 1px solid var(--gray-6);
     border-radius: 16px;
@@ -39,7 +39,7 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
       0 2px 4px var(--gray-a2),
       0 4px 8px var(--gray-a1),
       0 8px 16px var(--blue-a1);
-    max-width: 375px;
+    max-width: 400px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -88,14 +88,14 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     }
 
     &__name {
-      color: var(--gray-12);
+      color: hsl(0,0%, 100%);
       font-size: 1.25rem;
       font-weight: var(--weight-medium);
     }
 
     &__position {
-      font-size: 1rem;
-      color: var(--gray-11);
+      font-size: .75rem;
+      color: var(--gray-12);
       margin-block-end: 1rem;
     }
 
@@ -105,13 +105,13 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     }
 
     &__description {
-      color: var(--gray-10);
+      color: var(--gray-11);
       font-size: 0.9rem;
       margin-block-end: 1rem;
     }
 
     &__email {
-      color: var(--blue-9);
+      color: var(--blue-11);
       text-decoration: none;
       transition: color 300ms ease-in-out;
 
