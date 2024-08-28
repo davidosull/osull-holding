@@ -31,7 +31,7 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     box-shadow:
       0 2px 4px var(--gray-a2),
       0 4px 8px var(--gray-a1),
-      0 8px 16px var(--pink-a1);
+      0 8px 16px var(--blue-a1);
     max-width: 375px;
     margin: 0 auto;
     text-align: center;
@@ -42,6 +42,7 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
       height: 96px;
       margin-bottom: 1rem;
       overflow: hidden;
+      background: linear-gradient(to top, var(--blue-a9), var(--blue-a11));
     }
 
     &__avatar {
@@ -52,12 +53,12 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
 
     &__name {
       color: var(--gray-12);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: var(--weight-medium);
     }
 
     &__position {
-      font-size: 1.125rem;
+      font-size: 1rem;
       color: var(--gray-11);
       margin-block-end: 1rem;
     }
@@ -74,12 +75,12 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     }
 
     &__email {
-      color: var(--pink-9);
+      color: var(--blue-9);
       text-decoration: none;
       transition: color 300ms ease-in-out;
 
       &:hover {
-        color: var(--pink-10);
+        color: var(--blue-8);
       }
     }
   }
