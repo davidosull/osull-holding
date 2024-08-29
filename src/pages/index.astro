@@ -3,13 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 import avatarImage from '../../public/avatar.png';
+import description from '../data/description.json';
 ---
 
 <Layout title="David O'Sullivan - Freelance Web Developer">
   <Card
     name="David O'Sullivan"
     position="Freelance Web Developer"
-    desc="Specialising in building fast, accessible websites using WordPress and modern web technologies."
+    desc={description}
     email="david@osull.io"
     avatarSrc={avatarImage}
   />
