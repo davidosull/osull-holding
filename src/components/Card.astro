@@ -26,19 +26,20 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     inherits: false;
     initial-value: 0deg;
   }
+
   .card {
     --rotate: 45deg;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: var(--gray-surface);
     border: 1px solid var(--gray-6);
     border-radius: 16px;
     box-shadow:
-      0 2px 4px var(--gray-a2),
-      0 4px 8px var(--gray-a1),
-      0 8px 16px var(--blue-a1);
+      0 2px 4px var(--gray-2),
+      0 4px 8px var(--gray-2),
+      0 8px 16px var(--gray-2);
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
@@ -50,34 +51,34 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
       inset: 0;
       z-index: -1;
 
-    &:before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: conic-gradient(
-        from var(--rotate),
-        transparent 0%,
-        var(--blue-12) 5%,
-        transparent 10%
-      );
-      animation: rotate 7500ms linear infinite;
-    }
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: conic-gradient(
+          from var(--rotate),
+          transparent 0%,
+          hsla(0, 0%, 100%, 0.9) 5%,
+          transparent 10%
+        );
+        animation: rotate 10000ms linear infinite;
+      }
 
-    &:after {
-      content: '';
-      background: var(--gray-2);
-      border-radius: calc(16px - 1px);
-      position: absolute;
-      inset: 1px;
+      &::after {
+        content: '';
+        background: var(--gray-2);
+        border-radius: 15px;
+        position: absolute;
+        inset: 1px;
+      }
     }
-  }
 
     &__avatar-container {
       background: linear-gradient(to top, var(--blue-a9), var(--blue-a11));
       border-radius: 50%;
       width: 96px;
       height: 96px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       overflow: hidden;
     }
 
@@ -88,42 +89,42 @@ const { name, position, desc, email, avatarSrc } = Astro.props;
     }
 
     &__name {
-      color: hsl(0,0%, 100%);
-      font-size: 1.25rem;
+      color: hsl(0, 0%, 100%);
+      font-size: 1.5rem;
       font-weight: var(--weight-medium);
+      margin-bottom: 0.5rem;
     }
 
     &__position {
-      font-size: .75rem;
-      color: var(--gray-12);
-      margin-block-end: 1rem;
-    }
-
-    &__description,
-    &__email {
       font-size: 0.875rem;
+      color: var(--gray-12);
+      margin-bottom: 1rem;
     }
 
     &__description {
       color: var(--gray-11);
-      font-size: 0.9rem;
-      margin-block-end: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
     }
 
     &__email {
       color: var(--blue-11);
       text-decoration: none;
+      font-size: 0.875rem;
       transition: color 300ms ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--blue-8);
+        text-decoration: underline;
       }
     }
   }
 
   @keyframes rotate {
     to {
-      --rotate: 360deg
+      --rotate: 360deg;
     }
   }
 </style>
